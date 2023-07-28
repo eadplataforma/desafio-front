@@ -1,0 +1,41 @@
+$font-size-xl: 5rem;
+$font-size-600: 1.5rem;
+$font-size-500: 1.25rem;
+$font-size-400: 1rem;
+
+@media only screen and (max-width: 468px) {
+  $font-size-xl: 5rem;
+  $font-size-600: 1.5rem;
+  $font-size-500: 1.25rem;
+  $font-size-400: 1rem;
+}
+@media only screen and (min-width: 468px) {
+  $font-size-xl: 5rem;
+  $font-size-600: 1.5rem;
+  $font-size-500: 1.25rem;
+  $font-size-400: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  $font-size-xl: 5rem;
+  $font-size-600: 1.5rem;
+  $font-size-500: 1.25rem;
+  $font-size-400: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  $font-size-xl: 5rem;
+  $font-size-600: 1.5rem;
+  $font-size-500: 1.25rem;
+  $font-size-400: 1rem;
+}
+@media only screen and (min-width: 992px) {
+  $font-size-xl: 5rem;
+  $font-size-600: 1.5rem;
+  $font-size-500: 1.25rem;
+  $font-size-400: 1rem;
+}
+@media only screen and (min-width: 1200px) {
+  $font-size-xl: 5rem;
+  $font-size-600: 1.5rem;
+  $font-size-500: 1.25rem;
+  $font-size-400: 1rem;
+}

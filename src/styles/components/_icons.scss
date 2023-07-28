@@ -1,0 +1,11 @@
+@use "../base/colors";
+
+.navbar-icon {
+  color: colors.$color-primary;
+  font-size: 1rem;
+}
+
+.support-icon {
+  color: colors.$background-light-secondary;
+  font-size: 2rem;
+}
