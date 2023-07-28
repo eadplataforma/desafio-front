@@ -5,3 +5,21 @@
   flex-direction: row;
   background-color: $background-light-primary;
 }
+
+.content-wrapper {
+  flex: 1;
+}
+
+.page-main {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}

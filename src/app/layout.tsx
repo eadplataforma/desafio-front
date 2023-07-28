@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/context/ThemeContext";
+import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import "@/styles/_globals.scss";
 import { ConfigProvider } from "antd";
 import type { Metadata } from "next";
@@ -19,15 +20,17 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: "#1bbc9c",
-            },
-          }}
-        >
-          <ThemeProvider>{children}</ThemeProvider>
-        </ConfigProvider>
+        <StyledComponentsRegistry>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#1bbc9c",
+              },
+            }}
+          >
+            <ThemeProvider>{children}</ThemeProvider>
+          </ConfigProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

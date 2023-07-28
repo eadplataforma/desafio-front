@@ -1,4 +1,4 @@
-interface User {
+export interface User {
   id: string;
   name: string;
   email: string;
@@ -8,7 +8,7 @@ interface User {
   status: UserStatus;
 }
 
-interface GetUsers {
+export interface GetUsers {
   total: number;
   limit: number;
   offset: number;
@@ -16,7 +16,7 @@ interface GetUsers {
   users: User[];
 }
 
-enum UserStatus {
+export enum UserStatus {
   Adimplente = 0,
   Inadimplente = 1,
 }
