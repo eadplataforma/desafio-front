@@ -1,0 +1,47 @@
+@use "../base/colors" as *;
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  background-color: $background-light-secondary;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  height: 79.7px;
+  gap: 1.5rem;
+}
+
+.searchbar {
+  display: flex;
+  flex: 1;
+  margin-right: 10%;
+}
+
+.notification-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: 100px;
+  width: 2.7rem;
+  height: 2.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: darken($background-light-secondary, 3%);
+  }
+  &.active {
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background-color: $color-danger;
+      position: absolute;
+      right: 9px;
+      top: 7px;
+      border-radius: 100px;
+    }
+  }
+}

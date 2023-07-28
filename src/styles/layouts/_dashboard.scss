@@ -1,0 +1,7 @@
+@use "../base/colors" as *;
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  background-color: $background-light-primary;
+}

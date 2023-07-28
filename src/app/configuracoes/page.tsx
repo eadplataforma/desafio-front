@@ -1,3 +1,9 @@
+import { Navbar } from "@/components/Navbar";
+
 export default function ConfiguracoesPage() {
-  return <h1>Hello</h1>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 }

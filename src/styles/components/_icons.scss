@@ -1,11 +1,23 @@
-@use "../base/colors";
+@use "../base/colors" as *;
 
 .navbar-icon {
-  color: colors.$color-primary;
+  color: $color-primary;
   font-size: 1rem;
 }
 
 .support-icon {
-  color: colors.$background-light-secondary;
+  color: $background-light-secondary;
   font-size: 2rem;
+}
+
+.search-icon {
+  color: $text-light-bold;
+}
+
+.notification-icon {
+  font-size: 1.7rem;
+}
+
+.profile-arrow-icon {
+  color: $text-light-subtle;
 }

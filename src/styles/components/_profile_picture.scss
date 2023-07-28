@@ -1,0 +1,15 @@
+.profile-picture-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.profile-image-wrapper {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+}

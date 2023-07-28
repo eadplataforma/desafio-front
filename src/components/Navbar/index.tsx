@@ -1,24 +1,30 @@
-import Link from "next/link";
-import { BsGridFill, BsFillGearFill, BsFillChatFill } from "react-icons/bs";
-import "@/styles/components/_navbar.scss";
-import "@/styles/components/_icons.scss";
+"use client";
 import Logo from "../Logo";
+import Link from "next/link";
+import "@/styles/components/_icons.scss";
+import "@/styles/components/_navbar.scss";
+import { navbarItems } from "./navbarItems";
+import { usePathname } from "next/navigation";
+import { BsFillChatFill } from "react-icons/bs";
 
 export const Navbar = () => {
+  const pathname = usePathname();
   return (
-    <nav className="container">
+    <nav className="navbar-container">
       <div className="logo-wrapper">
-        <Logo />
+        <Logo width={108.35} />
       </div>
-      <div className="item-wrapper">
-        <Link href={"/dashboard"} className="item active">
-          <BsGridFill className="navbar-icon" />
-          <span className="item-text">Painel</span>
-        </Link>
-        <Link href={"/configuracoes"} className="item">
-          <BsFillGearFill className="navbar-icon" />
-          <span className="item-text">Configurações</span>
-        </Link>
+      <div className="items-wrapper">
+        {navbarItems.map(({ title, path, icon }) => (
+          <Link
+            href={path}
+            className={`item ${pathname === path ? "active" : ""}`}
+            key={path}
+          >
+            <span>{icon({ className: "navbar-icon" })}</span>
+            <span className="item-text">{title}</span>
+          </Link>
+        ))}
       </div>
       <Link href="/" className="footer">
         <BsFillChatFill className="support-icon" />
