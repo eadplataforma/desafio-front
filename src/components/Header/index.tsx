@@ -5,10 +5,14 @@ import { ProfilePicture } from "../ProfilePicture";
 import { Searchbar } from "../Searchbar";
 import { HeaderProfileButton } from "../HeaderProfileButton";
 
-export const Header = () => {
+interface Props {
+  initialSearchValue?: string;
+}
+
+export const Header = ({ initialSearchValue }: Props) => {
   return (
     <div className="header-container">
-      <Searchbar className="searchbar" />
+      <Searchbar className="searchbar" initialValue={initialSearchValue} />
       <div className="notification-icon-wrapper active">
         <IoMdNotificationsOutline className="notification-icon" />
       </div>

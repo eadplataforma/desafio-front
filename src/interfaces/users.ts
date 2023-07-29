@@ -1,3 +1,5 @@
+import { Pagination } from "./pagination";
+
 export interface User {
   id: string;
   name: string;
@@ -8,15 +10,11 @@ export interface User {
   status: UserStatus;
 }
 
-export interface GetUsers {
-  total: number;
-  limit: number;
-  offset: number;
-  rows: number;
+export interface GetUsers extends Pagination {
   users: User[];
 }
 
 export enum UserStatus {
-  Adimplente = 0,
-  Inadimplente = 1,
+  Adimplente = "0",
+  Inadimplente = "1",
 }

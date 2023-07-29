@@ -8,9 +8,20 @@
   }
 }
 
+.ant-table {
+  background-color: var(--background-secondary) !important;
+  td {
+    color: var(--text-bold);
+    &.ant-table-cell-row-hover {
+      background-color: var(--background-secondary-shade-5) !important;
+    }
+  }
+}
+
 .table-content {
   width: calc(100vw - 4rem - 108.35px - 6rem);
   overflow-x: "scroll";
+  flex: 1;
 }
 
 .pagination {
@@ -32,4 +43,8 @@
 
 .danger {
   color: var(--color-danger);
+}
+
+.normal {
+  color: var(--text-bold);
 }

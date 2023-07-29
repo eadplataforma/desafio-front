@@ -9,7 +9,10 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use(function (config) {
-  config.params = { ...config.params, token: process.env.NEXT_PUBLIC_API_KEY };
+  config.params = {
+    ...config.params,
+    token: process.env.NEXT_PUBLIC_API_SECRET,
+  };
   return config;
 });
 

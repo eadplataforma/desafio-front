@@ -4,6 +4,7 @@ import { ConfigProvider } from "antd";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { DataProvider } from "@/context/UsersContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,9 @@ export default function RootLayout({
               },
             }}
           >
-            <ThemeProvider>{children}</ThemeProvider>
+            <DataProvider>
+              <ThemeProvider>{children}</ThemeProvider>
+            </DataProvider>
           </ConfigProvider>
         </StyledComponentsRegistry>
       </body>
