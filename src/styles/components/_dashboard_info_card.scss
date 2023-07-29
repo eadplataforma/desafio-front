@@ -1,8 +1,7 @@
-@use "../base/colors" as *;
 @use "../base/typography" as *;
 
 .dashboard-card-wrapper {
-  background-color: $background-light-secondary;
+  background-color: var(--background-secondary);
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -15,13 +14,13 @@
 }
 
 .title {
-  color: $text-light-subtle;
+  color: var(--text-subtle);
   font-size: $font-size-400;
   font-weight: 300;
 }
 
 .content {
-  color: $color-primary;
+  color: var(--color-primary);
   font-size: $font-size-600;
   font-weight: 500;
 }

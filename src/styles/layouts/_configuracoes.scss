@@ -1,0 +1,43 @@
+@use "../base/typography" as *;
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--background-primary);
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+.page-main {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.theme-switcher-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.theme-switcher-label {
+  font-size: $font-size-400;
+  color: var(--text-bold);
+}
+
+.header-wrapper {
+  height: 79.7px;
+  width: 100%;
+  background-color: var(--background-secondary);
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.header-title {
+  font-size: $font-size-xl;
+  color: var(--color-primary);
+}

@@ -1,14 +1,45 @@
-$color-primary: #1bbc9c;
-$color-danger: #ff4d4f;
-$color-unselected: #dfefec;
-$color-primary-contrast: #ffffff;
+$--color-primary: --color-primary;
+$--color-primary-shade-5: --color-primary-shade-5;
+$--color-danger: --color-danger;
+$--color-unselected: --color-unselected;
+$--color-primary-contrast: --color-primary-contrast;
+$--background-primary: --background-primary;
+$--background-secondary: --background-secondary;
+$--background-secondary-shade-3: --background-secondary-shade-3;
+$--background-secondary-shade-5: --background-secondary-shade-5;
+$--text-bold: --text-bold;
+$--text-subtle: --text-subtle;
 
-$background-light-primary: #f5f5f5;
-$background-light-secondary: #ffffff;
-$text-light-bold: #666666;
-$text-light-subtle: #8a8a8a;
+$theme-map-light: (
+  $--color-primary: #1bbc9c,
+  $--color-primary-shade-5: darken(#1bbc9c, 5%),
+  $--color-danger: #ff4d4f,
+  $--color-unselected: #dfefec,
+  $--color-primary-contrast: #ffffff,
+  $--background-primary: #f5f5f5,
+  $--background-secondary: #ffffff,
+  $--background-secondary-shade-3: darken(#ffffff, 3%),
+  $--background-secondary-shade-5: darken(#ffffff, 5%),
+  $--text-bold: #666666,
+  $--text-subtle: #8a8a8a,
+);
 
-$background-dark-primary: #222222;
-$background-dark-secondary: #000000;
-$text-dark-bold: #eceff4;
-$text-dark-subtle: #d8dee9;
+$theme-map-dark: (
+  $--color-primary: #1bbc9c,
+  $--color-primary-shade-5: lighten(#1bbc9c, 5%),
+  $--color-danger: #ff4d4f,
+  $--color-unselected: #dfefec,
+  $--color-primary-contrast: #ffffff,
+  $--background-primary: #222222,
+  $--background-secondary: #000000,
+  $--background-secondary-shade-3: lighten(#000000, 3%),
+  $--background-secondary-shade-5: lighten(#000000, 5%),
+  $--text-bold: #eceff4,
+  $--text-subtle: #d8dee9,
+);
+
+@mixin spread-map($map: ()) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}

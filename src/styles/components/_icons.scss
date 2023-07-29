@@ -1,17 +1,17 @@
 @use "../base/colors" as *;
 
 .navbar-icon {
-  color: $color-primary;
+  color: var(--color-primary);
   font-size: 1rem;
 }
 
 .support-icon {
-  color: $background-light-secondary;
+  color: var(--color-primary-contrast);
   font-size: 2rem;
 }
 
 .search-icon {
-  color: $text-light-bold;
+  color: var(--text-bold);
 }
 
 .notification-icon {
@@ -19,5 +19,5 @@
 }
 
 .profile-arrow-icon {
-  color: $text-light-subtle;
+  color: var(--text-subtle);
 }

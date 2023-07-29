@@ -3,7 +3,7 @@
 .page-container {
   display: flex;
   flex-direction: row;
-  background-color: $background-light-primary;
+  background-color: var(--background-primary);
 }
 
 .content-wrapper {

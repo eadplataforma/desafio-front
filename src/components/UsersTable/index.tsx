@@ -1,9 +1,10 @@
 "use client";
-import { Table } from "antd";
+import { Pagination, PaginationProps, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { ProfilePicture } from "../ProfilePicture";
 import { User, UserStatus } from "@/interfaces/users";
 import "@/styles/components/_users_table.scss";
+import { PaginationButton } from "../PaginationButton";
 
 const columns: ColumnsType<User> = [
   {
@@ -37,7 +38,11 @@ const columns: ColumnsType<User> = [
     title: "Status",
     dataIndex: "status",
     key: "status",
-    render: (status) => <p>{UserStatus[status]}</p>,
+    render: (status) => (
+      <p className={`${status == UserStatus.Inadimplente ? "danger" : ""}`}>
+        {UserStatus[status]}
+      </p>
+    ),
   },
 ];
 
@@ -64,12 +69,30 @@ const dummyData: User[] = [
 ];
 
 export const UsersTable = () => {
+  const itemRender: PaginationProps["itemRender"] = (
+    _,
+    type,
+    originalElement
+  ) => {
+    if (type === "prev") {
+      return <PaginationButton title="Anterior" onClick={() => {}} />;
+    }
+    if (type === "next") {
+      return <PaginationButton title="Próximo" onClick={() => {}} />;
+    }
+    return <p className="pagination-text">{originalElement}</p>;
+  };
   return (
-    <Table
-      columns={columns}
-      dataSource={dummyData}
-      rowKey={(item) => item.id}
-      showHeader={false}
-    />
+    <div className="table-content">
+      <Table
+        columns={columns}
+        dataSource={dummyData}
+        rowKey={(item) => item.id}
+        showHeader={false}
+        pagination={false}
+        scroll={{ x: "100%" }}
+      />
+      <Pagination itemRender={itemRender} className="pagination" />
+    </div>
   );
 };

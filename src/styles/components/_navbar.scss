@@ -8,11 +8,11 @@
   height: 100dvh;
   align-items: flex-start;
   width: fit-content;
-  background-color: $background-light-secondary;
+  background-color: var(--background-secondary);
 }
 
 .logo-wrapper {
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   padding: 0.5rem 3rem;
 }
 
@@ -25,16 +25,16 @@
   align-items: center;
   position: relative;
   &:hover {
-    background-color: darken($background-light-secondary, 3%);
+    background-color: var(--background-secondary-shade-3);
   }
   &.active {
-    background-color: darken($background-light-secondary, 5%);
+    background-color: var(--background-secondary-shade-5);
     &::before {
       content: "";
       position: absolute;
       height: 100%;
       width: 2px;
-      background-color: $color-primary;
+      background-color: var(--color-primary);
       left: 0;
     }
   }
@@ -42,7 +42,7 @@
 
 .item-text {
   font-size: $font-size-400;
-  color: $text-light-subtle;
+  color: var(--text-subtle);
 }
 
 .items-wrapper {
@@ -59,16 +59,16 @@
   margin-top: auto;
   padding: 1rem 2rem;
   gap: 1rem;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   width: 100%;
   align-items: center;
   transition: background-color 200ms ease-in-out;
   &:hover {
-    background-color: darken($color-primary, 5%);
+    background-color: var(--color-primary-shade-5);
   }
 }
 
 .support-text {
   font-size: $font-size-400;
-  color: $color-primary-contrast;
+  color: var(--color-primary-contrast);
 }

@@ -1,0 +1,20 @@
+@use "../base/colors" as *;
+@use "../base/typography" as *;
+
+.pagination-button {
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+
+  background: var(--color-primary);
+  color: var(--color-primary) !important;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  font-size: $font-size-400;
+
+  &.disabled {
+    background: var(--color-unselected);
+    color: var(--color-primary) !important;
+  }
+}

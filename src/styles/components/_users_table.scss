@@ -1,6 +1,35 @@
+@use "../base/colors" as *;
+@use "../base/typography" as *;
+
 .table-perfil-picture-wrapper {
   div {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.table-content {
+  width: calc(100vw - 4rem - 108.35px - 6rem);
+  overflow-x: "scroll";
+}
+
+.pagination {
+  margin-top: 1rem !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination-text {
+  a {
+    font-size: $font-size-400;
+    color: var(--color-primary) !important;
+    font-weight: bold;
+    &.unselected {
+      color: var(--text-bold) !important;
+    }
+  }
+}
+
+.danger {
+  color: var(--color-danger);
 }
