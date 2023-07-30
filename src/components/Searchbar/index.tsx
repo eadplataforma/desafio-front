@@ -42,9 +42,9 @@ export const Searchbar = ({
             </button>
           }
           style={{ borderRadius: "100rem", flex: 1 }}
-          className="searchbar"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          onClick={(e) => e?.stopPropagation()}
         />
       </form>
     </div>

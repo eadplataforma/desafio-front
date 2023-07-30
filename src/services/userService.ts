@@ -1,4 +1,4 @@
-import { GetUsers, User } from "@/interfaces/users";
+import { GetUsers, UpdateUser, User } from "@/interfaces/users";
 import axiosClient from "./apiClient";
 import { off } from "process";
 
@@ -31,7 +31,7 @@ const userService = {
       throw error;
     }
   },
-  updateUser: async (id: string, user: User) => {
+  updateUser: async (id: string, user: UpdateUser) => {
     const response = await axiosClient.post(`/update/${id}`, user);
     return response;
   },

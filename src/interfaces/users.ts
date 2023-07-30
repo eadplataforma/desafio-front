@@ -10,6 +10,13 @@ export interface User {
   status: UserStatus;
 }
 
+export interface UpdateUser {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+}
+
 export interface GetUsers extends Pagination {
   users: User[];
 }

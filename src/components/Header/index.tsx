@@ -11,7 +11,10 @@ interface Props {
 export const Header = ({ initialSearchValue }: Props) => {
   return (
     <div className="header-container">
-      <Searchbar className="searchbar" initialValue={initialSearchValue} />
+      <Searchbar
+        className="searchbar-desktop"
+        initialValue={initialSearchValue}
+      />
       <div className="notification-icon-wrapper active">
         <IoMdNotificationsOutline className="notification-icon" />
       </div>

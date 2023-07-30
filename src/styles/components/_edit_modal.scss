@@ -1,0 +1,29 @@
+.edit-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0rem 1rem;
+}
+
+.edit-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ant-modal-content {
+  padding: 0 0 1rem 0 !important;
+}
+
+.ant-modal-header {
+  background-color: var(--color-primary) !important;
+  .ant-modal-title {
+    color: var(--color-primary-contrast) !important;
+  }
+  padding: 1rem;
+}
+
+.ant-divider {
+  border-color: var(--background-primary) !important;
+}

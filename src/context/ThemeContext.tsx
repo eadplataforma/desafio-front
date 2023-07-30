@@ -1,4 +1,6 @@
 "use client";
+import { darkTheme, lightTheme } from "@/styles/base/antDThemes";
+import { ConfigProvider } from "antd";
 import React, { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext({
@@ -29,7 +31,13 @@ export const ThemeProvider = ({ children }: Props) => {
 
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
-      {children}
+      <ConfigProvider
+        theme={{
+          token: theme === "light" ? lightTheme : darkTheme,
+        }}
+      >
+        {children}
+      </ConfigProvider>
     </ThemeContext.Provider>
   );
 };

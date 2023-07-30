@@ -1,6 +1,5 @@
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import "@/styles/_globals.scss";
-import { ConfigProvider } from "antd";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -22,17 +21,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <ConfigProvider
-            theme={{
-              token: {
-                colorPrimary: "#1bbc9c",
-              },
-            }}
-          >
-            <DataProvider>
-              <ThemeProvider>{children}</ThemeProvider>
-            </DataProvider>
-          </ConfigProvider>
+          <DataProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+          </DataProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

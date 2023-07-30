@@ -15,13 +15,6 @@ export const HeaderMobile = () => {
       <div className="mobile-logo-wrapper">
         <Logo width={70} />
       </div>
-      {/* {navbarItems.map(({ title, path, icon }) => (
-        <Link href={path} key={path} className="item">
-          <span>{icon({ className: "navbar-icon" })}</span>
-          <span className="item-text">{title}</span>
-        </Link>
-      ))} */}
-      {/* <Searchbar className="searchbar mobile" size="middle" /> */}
       <div className="profile-items-mobile">
         <div className="notification-icon-wrapper active">
           <IoMdNotificationsOutline className="notification-icon" />
@@ -54,7 +47,7 @@ const items: MenuProps["items"] = [
   })),
   {
     key: "search",
-    label: <Searchbar className="searchbar mobile" size="middle" />,
+    label: <Searchbar className="searchbar-mobile" size="middle" />,
   },
   {
     key: "support",

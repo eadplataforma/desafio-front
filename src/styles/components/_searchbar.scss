@@ -1,16 +1,3 @@
-.searchbar {
-  span {
-    background-color: var(--background-primary);
-    input {
-      background-color: var(--background-primary);
-      color: var(--text-bold);
-      &::placeholder {
-        color: var(--text-subtle);
-      }
-    }
-  }
-}
-
 form {
   width: 100%;
 }

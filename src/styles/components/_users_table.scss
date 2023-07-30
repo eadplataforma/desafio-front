@@ -9,13 +9,7 @@
 }
 
 .ant-table {
-  background-color: var(--background-secondary) !important;
-  td {
-    color: var(--text-bold);
-    &.ant-table-cell-row-hover {
-      background-color: var(--background-secondary-shade-5) !important;
-    }
-  }
+  cursor: pointer;
 }
 
 .table-content {
@@ -40,20 +34,6 @@
   .ant-pagination-jump-prev {
     margin-top: auto !important;
     margin-bottom: auto !important;
-  }
-  .ant-pagination-item-active {
-    background-color: var(--background-secondary);
-  }
-}
-
-.pagination-text {
-  a {
-    font-size: $font-size-400;
-    color: var(--color-primary) !important;
-    font-weight: bold;
-    &.unselected {
-      color: var(--text-bold) !important;
-    }
   }
 }
 

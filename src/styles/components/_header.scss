@@ -11,13 +11,10 @@
   gap: 1.5rem;
 }
 
-.searchbar {
+.searchbar-desktop {
   display: flex;
   flex: 1;
   margin-right: 10%;
-  &.mobile {
-    margin-right: 0px;
-  }
 }
 
 .notification-icon-wrapper {
