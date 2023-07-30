@@ -6,13 +6,19 @@ import "@/styles/components/_searchbar.scss";
 import "@/styles/components/_buttons.scss";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { SizeType } from "antd/es/config-provider/SizeContext";
 
 interface Props {
   className: string;
   initialValue?: string;
+  size?: SizeType;
 }
 
-export const Searchbar = ({ className, initialValue = "" }: Props) => {
+export const Searchbar = ({
+  className,
+  initialValue = "",
+  size = "large",
+}: Props) => {
   const [search, setSearch] = useState(initialValue);
   const router = useRouter();
 
@@ -28,7 +34,7 @@ export const Searchbar = ({ className, initialValue = "" }: Props) => {
     <div className={`${className}`}>
       <form onSubmit={(e) => handleSubmit(e)}>
         <Input
-          size="large"
+          size={size}
           placeholder="Busque por clientes"
           prefix={
             <button type="submit" className="search-button">

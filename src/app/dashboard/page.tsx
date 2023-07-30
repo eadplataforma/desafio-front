@@ -1,6 +1,7 @@
 "use client";
 import { DashboardInfoCard } from "@/components/DashboardInfoCard";
 import { Header } from "@/components/Header";
+import { HeaderMobile } from "@/components/HeaderMobile";
 import { Navbar } from "@/components/Navbar";
 import { SectionTitle } from "@/components/SectionTitle";
 import { UsersTable } from "@/components/UsersTable";
@@ -9,12 +10,14 @@ import { UserStatus } from "@/interfaces/users";
 import "@/styles/layouts/_dashboard.scss";
 import { moneyFormat } from "@/utils/moneyFormat";
 import { useContext, useEffect, useMemo, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function DashboardPage() {
   const { users, changePage, pagination } = useContext(DataContext);
   const [inadimplentes, setInadimplentes] = useState(0);
   const [adimplentes, setAdimplentes] = useState(0);
   const [totalArrecadado, setTotalArrecadado] = useState(0);
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   useEffect(() => {
     if (users.length === 0) {
       changePage(1);
@@ -43,9 +46,9 @@ export default function DashboardPage() {
 
   return (
     <div className="page-container">
-      <Navbar />
+      {!isMobile && <Navbar />}
       <div className="content-wrapper">
-        <Header />
+        {isMobile ? <HeaderMobile /> : <Header />}
         <main className="page-main">
           <SectionTitle>Visão Geral</SectionTitle>
           <div className="cards-wrapper">

@@ -10,6 +10,11 @@
   font-size: 2rem;
 }
 
+.mobile-support-icon {
+  color: var(--color-primary-contrast);
+  font-size: 1rem;
+}
+
 .search-icon {
   color: var(--text-bold);
 }
@@ -21,4 +26,9 @@
 
 .profile-arrow-icon {
   color: var(--text-subtle);
+}
+
+.mobile-menu-icon {
+  font-size: 1.5rem;
+  color: var(--text-bold);
 }

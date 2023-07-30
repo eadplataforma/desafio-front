@@ -1,7 +1,6 @@
 import { IoMdNotificationsOutline } from "react-icons/io";
 import "@/styles/components/_header.scss";
 import "@/styles/components/_icons.scss";
-import { ProfilePicture } from "../ProfilePicture";
 import { Searchbar } from "../Searchbar";
 import { HeaderProfileButton } from "../HeaderProfileButton";
 

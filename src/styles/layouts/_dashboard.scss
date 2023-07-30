@@ -19,6 +19,9 @@
   gap: 1.5rem;
   flex: 1;
   max-height: calc(100vh - 79.7px);
+  @media (max-width: 767px) {
+    max-height: calc(100vh - 52.16px);
+  }
   overflow-y: auto;
   overflow-x: hidden;
 }

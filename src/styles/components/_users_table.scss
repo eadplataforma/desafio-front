@@ -22,12 +22,28 @@
   width: calc(100vw - 4rem - 108.35px - 6rem);
   overflow-x: "scroll";
   flex: 1;
+  @media (max-width: 767px) {
+    width: calc(100vw - 4rem);
+  }
 }
 
 .pagination {
   margin-top: 1rem !important;
   display: flex;
   justify-content: flex-end;
+  height: 31.8px;
+  gap: 0.2rem;
+  .ant-pagination-item {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+  .ant-pagination-jump-prev {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+  .ant-pagination-item-active {
+    background-color: var(--background-secondary);
+  }
 }
 
 .pagination-text {

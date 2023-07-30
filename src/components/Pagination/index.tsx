@@ -1,6 +1,6 @@
 import { PaginationProps, Pagination as AntPagination } from "antd";
 import { PaginationButton } from "../PaginationButton";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "@/context/UsersContext";
 
 export const Pagination = () => {
@@ -18,6 +18,8 @@ export const Pagination = () => {
       onChange={(page, pageSize) => handlePagination(page, pageSize)}
       defaultCurrent={1}
       showSizeChanger={false}
+      showLessItems={true}
+      size="small"
     />
   );
 };
