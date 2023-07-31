@@ -1,0 +1,26 @@
+@use "../base/typography" as *;
+
+.dashboard-card-wrapper {
+  background-color: var(--background-secondary);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  flex: 1;
+  min-width: 190px;
+  -webkit-box-shadow: 3px 3px 8px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 3px 3px 8px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 8px -2px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  color: var(--text-subtle);
+  font-size: $font-size-400;
+  font-weight: 300;
+}
+
+.content {
+  color: var(--color-primary);
+  font-size: $font-size-600;
+  font-weight: 500;
+}

@@ -1,0 +1,36 @@
+"use client";
+import { Header } from "@/components/Header";
+import { Navbar } from "@/components/Navbar";
+import { UsersTable } from "@/components/UsersTable";
+import { DataContext } from "@/context/UsersContext";
+import "@/styles/layouts/_dashboard.scss";
+import { useSearchParams } from "next/navigation";
+import { useContext, useEffect, useMemo } from "react";
+
+export default function BuscaPage() {
+  const { filteredUsers, searchUsers } = useContext(DataContext);
+  const searchParams = useSearchParams();
+  const search = searchParams.get("q");
+
+  const logSearchValue = useMemo(() => {
+    return () => {
+      if (search) searchUsers(search);
+    };
+  }, [search]);
+
+  useEffect(() => {
+    logSearchValue();
+  }, [logSearchValue]);
+
+  return (
+    <div className="page-container">
+      <Navbar />
+      <div className="content-wrapper">
+        <Header initialSearchValue={search ? search : ""} />
+        <main className="page-main">
+          <UsersTable users={filteredUsers} />
+        </main>
+      </div>
+    </div>
+  );
+}

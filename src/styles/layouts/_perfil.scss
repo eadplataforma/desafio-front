@@ -1,0 +1,36 @@
+@use "../base/typography" as *;
+
+.header-wrapper {
+  height: 79.7px;
+  width: 100%;
+  background-color: var(--background-secondary);
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.header-title {
+  font-size: $font-size-xl;
+  color: var(--color-primary);
+}
+
+.info-text {
+  font-size: $font-size-400;
+  color: var(--text-bold);
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 512px) {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

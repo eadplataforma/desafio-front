@@ -1,0 +1,32 @@
+.page-container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--background-primary);
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  max-height: calc(100vh - 79.7px);
+  @media (max-width: 767px) {
+    max-height: calc(100vh - 52.16px);
+  }
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}

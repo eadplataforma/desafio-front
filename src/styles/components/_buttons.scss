@@ -1,0 +1,94 @@
+@use "../base/typography" as *;
+
+.pagination-button {
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+
+  background: var(--color-primary);
+  color: var(--color-primary-contrast) !important;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  font-size: $font-size-400;
+
+  &.disabled {
+    background: var(--color-unselected);
+    color: var(--color-primary) !important;
+    cursor: not-allowed !important;
+  }
+}
+
+.search-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+}
+
+.mobile-menu-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  transition: background-color 200ms ease-in-out;
+  cursor: pointer;
+  border-radius: 100px;
+  width: 2.7rem;
+  height: 2.7rem;
+
+  &:hover {
+    background-color: var(--background-secondary-shade-3);
+  }
+  &.active {
+    background-color: var(--background-secondary-shade-3);
+  }
+}
+
+.delete-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+
+  padding: 0.5rem 0.8rem;
+  background-color: var(--color-danger);
+}
+
+.delete-selcted-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  display: flex;
+
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-bold);
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &.active {
+    text-decoration: underline;
+  }
+}
