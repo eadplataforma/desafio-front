@@ -1,0 +1,73 @@
+@use "../base/typography" as *;
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  align-items: flex-start;
+  width: fit-content;
+  background-color: var(--background-secondary);
+}
+
+.logo-wrapper {
+  background-color: var(--color-primary);
+  padding: 0.5rem 3rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+  transition: background-color 200ms ease-in-out;
+  align-items: center;
+  position: relative;
+  &:hover {
+    background-color: var(--background-secondary-shade-3);
+  }
+  &.active {
+    background-color: var(--background-secondary-shade-5);
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background-color: var(--color-primary);
+      left: 0;
+    }
+  }
+}
+
+.item-text {
+  font-size: $font-size-400;
+  color: var(--text-subtle);
+}
+
+.items-wrapper {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  background-color: var(--color-primary);
+  width: 100%;
+  align-items: center;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: var(--color-primary-shade-5);
+  }
+}
+
+.support-text {
+  font-size: $font-size-400;
+  color: var(--color-primary-contrast);
+}

@@ -1,0 +1,45 @@
+.mobile-header {
+  background-color: var(--background-secondary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-right: 0.3rem;
+  justify-content: space-between;
+}
+
+.mobile-logo-wrapper {
+  background-color: var(--color-primary);
+  padding: 0.3rem 1rem;
+  align-self: centers;
+}
+
+.item {
+  height: 100%;
+}
+
+.profile-items-mobile {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.mobile-support-link {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  background-color: var(--color-primary);
+  width: 100%;
+  align-items: center;
+  transition: background-color 200ms ease-in-out;
+  border-radius: 8px;
+  &:hover {
+    background-color: var(--color-primary-shade-5);
+  }
+}
+
+.searchbar-mobile {
+  margin-right: 0px;
+}

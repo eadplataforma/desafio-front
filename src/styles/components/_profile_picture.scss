@@ -1,0 +1,19 @@
+.profile-image-wrapper {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+  &.sm {
+    width: 30px;
+    height: 30px;
+  }
+  &.md {
+    width: 40px;
+    height: 40px;
+  }
+  &.xl {
+    width: 80px;
+    height: 80px;
+  }
+}
