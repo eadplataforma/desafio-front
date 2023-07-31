@@ -11,7 +11,7 @@
 
 ## Visão Geral
 
-Este projeto foi desenvolvido como parte de um teste técnico para a empresa EAD Plataforma, com o objetivo de avaliar minhas habilidades de desenvolvimento e organização de código. O projeto é uma aplicação web construída com Next.js, uma estrutura de renderização do lado do servidor (SSR) e React, que permite a criação de aplicações web modernas e escaláveis.
+Este projeto foi desenvolvido como parte de um teste técnico para a empresa EAD Plataforma, com o objetivo de avaliar minhas habilidades de desenvolvimento e organização de código. O projeto é uma aplicação web construída com Next.js, uma estrutura de renderização do lado do servidor (SSR) e React.
 
 ### Funcionalides Principais
 #### 1. Página Dashboard
@@ -23,7 +23,7 @@ A página de configurações possui um seletor de tema com armazenamento no loca
 
 #### 3. Página Perfil
 
-A página de perfil exibe informações detalhadas do usuário conectado à aplicação. Essas informações são nome, email, telefone e foto de perfil,
+A página de perfil exibe informações detalhadas do usuário conectado à aplicação. Essas informações são nome, email, telefone e foto de perfil.
 
 ## Tecnologias Utilizadas
 
