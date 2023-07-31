@@ -1,13 +1,13 @@
 import "@/styles/components/_header_mobile.scss";
-import Logo from "../Logo";
-import { navbarItems } from "../Navbar/navbarItems";
+
 import Link from "next/link";
-import { Searchbar } from "../Searchbar";
-import { IoMdNotificationsOutline } from "react-icons/io";
-import { HeaderProfileButton } from "../HeaderProfileButton";
-import { AiOutlineMenu } from "react-icons/ai";
 import { Dropdown, MenuProps } from "antd";
+import { AiOutlineMenu } from "react-icons/ai";
 import { BsFillChatFill } from "react-icons/bs";
+import { navbarItems } from "../Navbar/navbarItems";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { HeaderProfileButton, Logo } from "@/components";
+import { Searchbar } from "@/components/Searchbar";
 
 export const HeaderMobile = () => {
   return (

@@ -1,12 +1,11 @@
 "use client";
-import { HeaderMobile } from "@/components/HeaderMobile";
-import { Navbar } from "@/components/Navbar";
-import { SectionTitle } from "@/components/SectionTitle";
-import { ThemeContext } from "@/context/ThemeContext";
 import "@/styles/layouts/_configuracoes.scss";
+
 import { Switch } from "antd";
 import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
+import { ThemeContext } from "@/context/ThemeContext";
+import { HeaderMobile, Navbar, SectionTitle } from "@/components";
 
 export default function ConfiguracoesPage() {
   const { theme, setTheme } = useContext(ThemeContext);

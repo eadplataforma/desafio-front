@@ -1,8 +1,9 @@
 "use client";
-import Logo from "../Logo";
-import Link from "next/link";
 import "@/styles/components/_icons.scss";
 import "@/styles/components/_navbar.scss";
+
+import Link from "next/link";
+import { Logo } from "@/components";
 import { navbarItems } from "./navbarItems";
 import { usePathname } from "next/navigation";
 import { BsFillChatFill } from "react-icons/bs";

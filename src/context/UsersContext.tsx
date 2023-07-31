@@ -2,15 +2,17 @@
 import { Pagination } from "@/interfaces/pagination";
 import { User } from "@/interfaces/users";
 import userService from "@/services/userService";
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 interface IContext {
   users: User[];
+  setUsers: (value: User[]) => void;
   paginatedUsers: User[];
+  setPaginatedUsers: (value: User[]) => void;
   pagination: Pagination;
   currentUser: User | null;
   fetchUsers: (value?: number) => void;
-  changePage: (newPage: number) => void;
+  fetchPage: (newPage: number) => void;
 }
 
 export const DataContext = createContext<IContext>({
@@ -19,7 +21,9 @@ export const DataContext = createContext<IContext>({
   pagination: { total: 0, limit: 10, offset: 0, rows: 60 },
   currentUser: null,
   fetchUsers: () => {},
-  changePage: () => {},
+  fetchPage: () => {},
+  setUsers: () => {},
+  setPaginatedUsers: () => {},
 });
 
 interface Props {
@@ -37,7 +41,14 @@ export const DataProvider = ({ children }: Props) => {
     rows: 60,
   });
 
-  const changePage = async (newPage: number) => {
+  useEffect(() => {
+    if (users.length > 0) {
+      console.log(users[0]);
+      setCurrentUser(users[0]);
+    }
+  }, [users]);
+
+  const fetchPage = async (newPage: number) => {
     if (users.length < newPage * pagination.limit - (pagination.limit - 1)) {
       const { offset, limit, total, rows, users } = await userService.getUsers(
         newPage * pagination.limit - pagination.limit
@@ -93,11 +104,13 @@ export const DataProvider = ({ children }: Props) => {
     <DataContext.Provider
       value={{
         users,
+        setUsers,
         pagination,
+        setPaginatedUsers,
         currentUser,
         fetchUsers,
         paginatedUsers,
-        changePage,
+        fetchPage,
       }}
     >
       {children}

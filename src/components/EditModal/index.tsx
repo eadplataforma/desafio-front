@@ -1,11 +1,10 @@
-import { UpdateUser, User } from "@/interfaces/users";
+import "@/styles/components/_edit_modal.scss";
+
 import { Divider, Input, Modal } from "antd";
 import { useEffect, useState } from "react";
-import "@/styles/components/_edit_modal.scss";
-import { phoneFormat } from "@/utils/phoneFormat";
-import { emailValidator } from "@/utils/emailValidator";
-import { phoneValidator } from "@/utils/phoneValidator";
 import userService from "@/services/userService";
+import { UpdateUser, User } from "@/interfaces/users";
+import { emailValidator, phoneFormat, phoneValidator } from "@/utils";
 
 interface Props {
   open: boolean;

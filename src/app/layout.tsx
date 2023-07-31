@@ -1,9 +1,10 @@
-import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import "@/styles/_globals.scss";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/context/ThemeContext";
 import { DataProvider } from "@/context/UsersContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import StyledComponentsRegistry from "@/lib/AntdRegistry";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -4,7 +4,7 @@ interface Props {
   width?: number;
 }
 
-const Logo = ({ width = 147 }: Props) => {
+export const Logo = ({ width = 147 }: Props) => {
   const ratio = 147 / 81;
   return (
     <Image
@@ -16,4 +16,3 @@ const Logo = ({ width = 147 }: Props) => {
     />
   );
 };
-export default Logo;

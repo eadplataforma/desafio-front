@@ -1,10 +1,11 @@
 "use client";
-import Image from "next/image";
-import "@/styles/components/_profile_picture.scss";
 import "@/styles/components/_icons.scss";
+import "@/styles/components/_profile_picture.scss";
+
+import Image from "next/image";
 
 interface Props {
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   url: string;
 }
 

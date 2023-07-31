@@ -10,7 +10,7 @@ interface NavbarItem {
 export const navbarItems: NavbarItem[] = [
   {
     title: "Painel",
-    path: "/dashboard",
+    path: "/",
     icon: BsGridFill,
   },
   {

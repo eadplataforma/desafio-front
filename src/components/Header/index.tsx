@@ -1,7 +1,8 @@
-import { IoMdNotificationsOutline } from "react-icons/io";
 import "@/styles/components/_header.scss";
 import "@/styles/components/_icons.scss";
-import { Searchbar } from "../Searchbar";
+
+import { Searchbar } from "@/components";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import { HeaderProfileButton } from "../HeaderProfileButton";
 
 interface Props {

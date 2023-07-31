@@ -1,35 +1,124 @@
 "use client";
-import { Table } from "antd";
-import { useContext, useState } from "react";
-import { Pagination } from "../Pagination";
-import { userTableColumns } from "./tableColumns";
-import { DataContext } from "@/context/UsersContext";
 import "@/styles/components/_users_table.scss";
-import { User } from "@/interfaces/users";
-import { EditModal } from "../EditModal";
+
+import { Checkbox, Table } from "antd";
+import { FiTrash } from "react-icons/fi";
+import { ColumnsType } from "antd/es/table";
+import { useContext, useState } from "react";
+import { Key } from "antd/es/table/interface";
+import { DataContext } from "@/context/UsersContext";
+import { User, UserStatus } from "@/interfaces/users";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
+import {
+  DeleteModal,
+  EditModal,
+  Pagination,
+  ProfilePicture,
+} from "@/components";
 
 export const UsersTable = () => {
   const { paginatedUsers } = useContext(DataContext);
-  const [modalState, setModalState] = useState(false);
+  const [usersToDelete, setUsersToDelete] = useState<User[]>([]);
+  const [updateModalState, setUpdateModalState] = useState(false);
+  const [deleteModalState, setDeleteModalState] = useState(false);
   const [userToEdit, setUserToEdit] = useState<User | null>(null);
-  console.log(paginatedUsers);
+  const [selectedRowKeys, setSelectedRowKeys] = useState<Key[]>([]);
+
   const rowSelection = {
-    onChange: (selectedRowKeys: React.Key[], selectedRows: User[]) => {
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        "selectedRows: ",
-        selectedRows
-      );
+    selectedRowKeys,
+    onChange: (selectedKeys: React.Key[], selectedRows: User[]) => {
+      setSelectedRowKeys(selectedKeys);
+      setUsersToDelete(selectedRows);
     },
-    getCheckboxProps: (record: User) => ({
-      disabled: record.name === "Disabled User",
-      name: record.name,
-    }),
   };
+
+  const onSelectAll = (e: CheckboxChangeEvent) => {
+    if (e.target.checked) {
+      setSelectedRowKeys(paginatedUsers.map((item) => item.id));
+      setUsersToDelete(paginatedUsers);
+    } else {
+      setUsersToDelete([]);
+      setSelectedRowKeys([]);
+    }
+  };
+
+  const onDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation();
+    setDeleteModalState(true);
+  };
+
+  const userTableColumns: ColumnsType<User> = [
+    {
+      title: "Foto de Perfil",
+      dataIndex: "photo_url",
+      key: "photo_url",
+      render: (link) => <ProfilePicture size="sm" url={link} />,
+      className: "table-perfil-picture-wrapper",
+    },
+    {
+      title: "Nome",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Telefone",
+      dataIndex: "phone",
+      key: "phone",
+    },
+    {
+      title: "Montante",
+      dataIndex: "amount",
+      key: "amount",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      render: (status) => (
+        <p
+          className={`${
+            status == UserStatus.Inadimplente ? "danger" : "normal"
+          }`}
+        >
+          {status === UserStatus.Adimplente ? "Adimplente" : "Inadimplente"}
+        </p>
+      ),
+    },
+    {
+      title: "Actions",
+      dataIndex: "actions",
+      key: "actions",
+      render: (_, record) =>
+        usersToDelete.some((userToDelete) => userToDelete.id === record.id) && (
+          <button
+            type="button"
+            className="delete-button"
+            onClick={(e) => onDelete(e)}
+          >
+            <FiTrash className="delete-icon" />
+          </button>
+        ),
+    },
+  ];
+
   return (
     <div>
-      <input type="checkbox" id="select-all" />
-      <label htmlFor="select-all">Selecionar Todos</label>
+      <div className="table-header-wrapper">
+        <Checkbox onChange={(e) => onSelectAll(e)}>Selecionar Todos</Checkbox>
+        {usersToDelete.length > 0 && (
+          <button
+            className="delete-selcted-button"
+            onClick={() => setDeleteModalState(true)}
+          >
+            Excluir selecionados
+          </button>
+        )}
+      </div>
       <div className="table-content">
         <Table
           columns={userTableColumns}
@@ -46,16 +135,21 @@ export const UsersTable = () => {
             return {
               onClick: () => {
                 setUserToEdit(record);
-                setModalState(true);
+                setUpdateModalState(true);
               },
             };
           }}
         />
         <Pagination />
         <EditModal
-          open={modalState}
-          setOpen={setModalState}
+          open={updateModalState}
+          setOpen={setUpdateModalState}
           user={userToEdit}
+        />
+        <DeleteModal
+          open={deleteModalState}
+          setOpen={setDeleteModalState}
+          data={usersToDelete}
         />
       </div>
     </div>

@@ -1,13 +1,13 @@
-import { PaginationProps, Pagination as AntPagination } from "antd";
-import { PaginationButton } from "../PaginationButton";
 import { useContext } from "react";
 import { DataContext } from "@/context/UsersContext";
+import { PaginationButton } from "../PaginationButton";
+import { PaginationProps, Pagination as AntPagination } from "antd";
 
 export const Pagination = () => {
-  const { changePage, pagination } = useContext(DataContext);
+  const { fetchPage, pagination } = useContext(DataContext);
 
   const handlePagination = (page: number, pageSize: number) => {
-    changePage(page);
+    fetchPage(page);
   };
   return (
     <AntPagination
@@ -35,5 +35,5 @@ const itemRender: PaginationProps["itemRender"] = (
   if (type === "next") {
     return <PaginationButton title="Próximo" onClick={() => {}} />;
   }
-  return <p className="pagination-text">{originalElement}</p>;
+  return <span className="pagination-text">{originalElement}</span>;
 };

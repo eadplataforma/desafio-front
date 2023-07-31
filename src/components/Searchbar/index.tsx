@@ -1,11 +1,12 @@
 "use client";
-import { Input } from "antd";
-import { HiOutlineSearch } from "react-icons/hi";
 import "@/styles/components/_icons.scss";
-import "@/styles/components/_searchbar.scss";
 import "@/styles/components/_buttons.scss";
-import { useRouter } from "next/navigation";
+import "@/styles/components/_searchbar.scss";
+
+import { Input } from "antd";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { HiOutlineSearch } from "react-icons/hi";
 import { SizeType } from "antd/es/config-provider/SizeContext";
 
 interface Props {
