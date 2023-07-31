@@ -1,6 +1,6 @@
-#Teste Técnico - EAD Plataforma
+# Teste Técnico - EAD Plataforma
 
-##Índice
+## Índice
 
 - [Visão Geral](#visão-geral)
 - [Pré-requisitos](#pré-requisitos)
@@ -8,27 +8,24 @@
 - [Uso](#uso)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Licença](#licença)
 
-##Visão Geral
+## Visão Geral
 
 Este projeto foi desenvolvido como parte de um teste técnico para a empresa EAD Plataforma, com o objetivo de avaliar minhas habilidades de desenvolvimento e organização de código. O projeto é uma aplicação web construída com Next.js, uma estrutura de renderização do lado do servidor (SSR) e React, que permite a criação de aplicações web modernas e escaláveis.
 
-###Funcionalides Principais
-####1. Página Dashboard
+### Funcionalides Principais
+#### 1. Página Dashboard
 
 A página de dashboard apresenta uma listagem paginada dos clientes registrados no sistema. Cada cliente é exibido com informações relevantes, como nome, e-mail, número de telefone, montante e status. Além disso, a página de dashboard permite a edição e exclusão de clientes.
 
-####2. Página Configurações
+#### 2. Página Configurações
 A página de configurações possui um seletor de tema com armazenamento no localStorage do navegador, para que o mesmo tema seja aplicado automaticamente na próxima vez que o usuário acessar a página.
 
-####3. Página Perfil
+#### 3. Página Perfil
 
 A página de perfil exibe informações detalhadas do usuário conectado à aplicação. Essas informações são nome, email, telefone e foto de perfil,
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-##Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Next.js 13: O Next.js 13 oferece diversas melhorias, como desempenho aprimorado, suporte a React 18 e outras funcionalidades avançadas.
 - TypeScript: O TypeScript é uma linguagem de programação que adiciona tipagem estática ao JavaScript, proporcionando mais segurança e robustez ao código.
@@ -36,14 +33,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Axios: O Axios é um cliente HTTP baseado em Promises que facilita a comunicação com APIs externas e recursos do servidor.
 - Sass: O Sass é uma extensão do CSS que fornece recursos avançados, como variáveis, aninhamento de seletores e funções, para uma melhor organização e reutilização de estilos.
 
-##Pré-requisitos
+## Pré-requisitos
 
 Para executar este projeto localmente, é necessário ter o seguinte software instalado em sua máquina:
 
     Node.js (versão 16.8 ou posterior)
     npm ou yarn
 
-##Instalação
+## Instalação
 
 Para configurar o projeto em seu ambiente local, siga os seguintes passos:
 
@@ -71,7 +68,7 @@ ou
 yarn install
 ```
 
-##Uso
+## Uso
 
 Para iniciar o servidor de desenvolvimento e executar a aplicação localmente, utilize o seguinte comando:
 
